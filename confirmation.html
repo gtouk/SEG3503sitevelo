@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmation de Réservation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <h1><a class="navbar-brand" href="#"><span class="text_site">Gilly</span>Velo</a></h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="navbar-brand" href="#"><h1><span class="text_site">Gilly</span>Velo</h1></a>
+          <a class="nav-link" href="#service">Service</a>
+          <a class="nav-link" href="#team">Expert</a>
+          <a class="nav-link text_site" href="#booking">Reserver</a>
+          <a class="nav-link" href="#footer">A propos</a>
+          <a id="google_translate_element" class="nav-link" href="">Translate</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<section id="confirmation" class="section confirmation-section mt-5 pt-5">
+  <div class="container mt-5 pt-5">
+    <h1 class="text-center text_site">Confirmation de Réservation</h1>
+    <div class="alert alert-success mt-4" role="alert" id="successMessage" style="display:none;">
+      Votre réservation a été effectuée avec succès!
+    </div>
+    <div class="alert alert-warning mt-4" role="alert" id="cancelMessage" style="display:none;">
+      Reservation annulée
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6 offset-md-3">
+        <h3>Détails de la réservation :</h3>
+        <p><strong>Prénom :</strong> John Doe</p>
+        <p><strong>Nom :</strong> Jane Doe</p>
+        <p><strong>Email :</strong> john.doe@example.com</p>
+        <p><strong>Service :</strong> Service 1</p>
+        <p><strong>Expert :</strong> Expert 1</p>
+        <p><strong>Date et heure :</strong> 01/01/2024 12:00</p>
+        <p><strong>Adresse :</strong> 123 Rue Principale, Ville, Pays</p>
+      </div>
+    </div>
+    <div class="mt-4">
+      <button id="confirmReservation" class="btn btn-primary">Confirmer ma réservation</button>
+      <button id="cancelReservation" class="btn btn-danger">Annuler ma réservation</button>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('confirmReservation').addEventListener('click', function() {
+  document.getElementById('successMessage').style.display = 'block';
+});
+
+document.getElementById('cancelReservation').addEventListener('click', function() {
+  document.getElementById('cancelMessage').style.display = 'block';
+  setTimeout(function() {
+    window.location.href = 'index.html'; // Redirection après un délai
+  }, 2000); // Attendre 2 secondes avant de rediriger
+});
+</script>
+
+</body>
+</html>
